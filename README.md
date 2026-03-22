@@ -1,61 +1,63 @@
-# BSE Welding Engineering Limited
+# BSE Welding Engineering Limited - Live Placeholder Setup
 
-Fact-first interim website for **BSE Welding Engineering Limited**, designed for [GitHub Pages](https://pages.github.com/) and future connection to a WHC-managed custom domain.
+Simple professional placeholder site intended to go live immediately on GitHub Pages, then attach to a WHC-managed custom domain.
 
-This version intentionally excludes guessed claims and unverified contact details.
+## Project Files
 
-## Structure
+- `index.html` - single under-construction page
+- `styles.css` - styling for the placeholder page
+- `CNAME` - custom domain value for GitHub Pages
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Main single-page website |
-| `styles.css` | All styles (no external CSS frameworks) |
+## Local Check
 
-## Current Content Policy
+Open `index.html` in a browser to confirm the page renders.
 
-1. Only publicly verifiable information is displayed.
-2. Unsupported marketing claims and placeholder metrics are removed.
-3. Contact details remain unpublished until owner-confirmed.
+## Go-Live Checklist (GitHub Pages)
 
-## Public Sources Used (March 20, 2026)
+1. Push this repository to GitHub.
+2. In GitHub: `Settings -> Pages`.
+3. Under `Build and deployment`, select:
+   - `Source`: `Deploy from a branch`
+   - `Branch`: `main` and `/ (root)`
+4. Save and wait for the first publish.
+5. Confirm default URL works: `https://<github-username>.github.io/<repo-name>/`
 
-1. ASM International Manitoba Chapter: `http://asm-manitoba.ca/industries.html`
-2. Manitoba Court Registry page containing the business name:
-	`https://web43.gov.mb.ca/Registry/FileNumberSearch/LawyerDetails?FileNumber=CI20-01-26727&PartySequenceNum=2085366&PartyName=BSE%20WELDING%20ENGINEERING%20LIMITED,%20`
-3. Province of Manitoba engineering firms list (background context, non-exhaustive):
-	`http://gov.mb.ca/sd/envprograms/swm/pdf/engineering_firms.pdf`
+## Custom Domain Setup (WHC)
 
-## Local Preview
+Target domain: `bseweldingengineeringlimited.ca`
 
-Open `index.html` directly in any modern browser — no build step required.
+### 1) GitHub Pages side
 
-## GitHub Pages Deployment
+1. In `Settings -> Pages -> Custom domain`, enter:
+   `bseweldingengineeringlimited.ca`
+2. Keep `Enforce HTTPS` enabled once certificate is issued.
 
-1. Push to the `main` branch (or your configured Pages branch).
-2. In the repository **Settings → Pages**, set the source to the root of that branch.
-3. GitHub will publish the site at `https://<username>.github.io/bse/` within a few minutes.
-4. Confirm the site loads and all source links in the "Public Source Notes" section open correctly.
+### 2) WHC DNS side
 
-## Custom Domain (WHC)
+For apex/root domain (`bseweldingengineeringlimited.ca`), add these `A` records:
 
-Planned domain: `BSEWeldingEngineeringLimited.ca`
+- `185.199.108.153`
+- `185.199.109.153`
+- `185.199.110.153`
+- `185.199.111.153`
 
-1. In **Settings → Pages → Custom domain**, enter `BSEWeldingEngineeringLimited.ca` when ready.
-2. If using a `www` subdomain, add a WHC DNS `CNAME` record:
-	- Host: `www`
-	- Value: `<username>.github.io`
-3. If using apex/root domain, set WHC `A` records to GitHub Pages IPs per GitHub docs.
-4. Wait for DNS propagation, then verify the domain resolves to GitHub Pages.
-5. Enable **Enforce HTTPS** once certificate provisioning completes.
+Optional `www` support:
 
-### CNAME File Timing
+- Add `CNAME` record:
+  - Host: `www`
+  - Value: `<github-username>.github.io`
 
-- Add a `CNAME` file to the repository root only when DNS changes are ready to go live.
-- File content should be exactly:
-  `BSEWeldingEngineeringLimited.ca`
+### 3) Verify
 
-## Next Owner Inputs Needed
+1. Wait for DNS propagation.
+2. Confirm both load (if `www` configured):
+   - `https://bseweldingengineeringlimited.ca`
+   - `https://www.bseweldingengineeringlimited.ca`
+3. Check GitHub Pages shows domain as connected.
 
-1. Official service list and service area wording.
-2. Preferred public contact channel (email/phone/form destination).
-3. Final custom domain to add a `CNAME` file.
+## If Domain Changes
+
+Update both:
+
+- `CNAME`
+- GitHub Pages `Custom domain` field
