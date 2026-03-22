@@ -1,40 +1,55 @@
-# BSE Welding Engineering Limited - Live Placeholder Setup
+# BSE Welding Engineering Limited Temporary Website
 
-Simple professional placeholder site intended to go live immediately on GitHub Pages, then attach to a WHC-managed custom domain.
+Temporary launch site for **BSE Welding Engineering Limited**, intended to be published on GitHub Pages and then connected to the custom domain:
 
-## Project Files
+`bseweldingengineeringlimited.ca`
 
-- `index.html` - single under-construction page
-- `styles.css` - styling for the placeholder page
-- `CNAME` - custom domain value for GitHub Pages
+## Files
+
+- `index.html` - responsive temporary homepage
+- `styles.css` - visual design and responsive layout
+- `favicon.svg` - site icon
+- `CNAME` - GitHub Pages custom domain target
+- `.nojekyll` - tells GitHub Pages to serve the site as plain static files
 
 ## Local Check
 
-Open `index.html` in a browser to confirm the page renders.
+Open `index.html` in a browser and confirm:
 
-## Go-Live Checklist (GitHub Pages)
+- layout looks correct on desktop
+- layout collapses cleanly on mobile width
+- the page clearly states the website is under construction
 
-1. Push this repository to GitHub.
-2. In GitHub: `Settings -> Pages`.
-3. Under `Build and deployment`, select:
+## GitHub Pages Publish
+
+1. Push the repository to GitHub.
+2. Open `Settings -> Pages`.
+3. Under `Build and deployment`, set:
    - `Source`: `Deploy from a branch`
-   - `Branch`: `main` and `/ (root)`
-4. Save and wait for the first publish.
-5. Confirm default URL works: `https://<github-username>.github.io/<repo-name>/`
+   - `Branch`: `main`
+   - `Folder`: `/ (root)`
+4. Wait for the first deployment to finish.
+5. Confirm the GitHub Pages URL works before touching DNS.
 
-## Custom Domain Setup (WHC)
+## Custom Domain Setup
 
-Target domain: `bseweldingengineeringlimited.ca`
+This repository already includes the correct `CNAME` file:
 
-### 1) GitHub Pages side
+`bseweldingengineeringlimited.ca`
 
-1. In `Settings -> Pages -> Custom domain`, enter:
-   `bseweldingengineeringlimited.ca`
-2. Keep `Enforce HTTPS` enabled once certificate is issued.
+When the domain is purchased, finish setup in two places.
 
-### 2) WHC DNS side
+### 1) GitHub Pages
 
-For apex/root domain (`bseweldingengineeringlimited.ca`), add these `A` records:
+In `Settings -> Pages`:
+
+- confirm `Custom domain` is `bseweldingengineeringlimited.ca`
+- leave `Enforce HTTPS` off until GitHub finishes certificate provisioning
+- turn `Enforce HTTPS` on after the certificate is active
+
+### 2) DNS Provider
+
+For the root domain (`bseweldingengineeringlimited.ca`), create these `A` records:
 
 - `185.199.108.153`
 - `185.199.109.153`
@@ -43,21 +58,15 @@ For apex/root domain (`bseweldingengineeringlimited.ca`), add these `A` records:
 
 Optional `www` support:
 
-- Add `CNAME` record:
-  - Host: `www`
-  - Value: `<github-username>.github.io`
+- record type: `CNAME`
+- host/name: `www`
+- target/value: `<github-username>.github.io`
 
-### 3) Verify
+## Final Launch Check
 
-1. Wait for DNS propagation.
-2. Confirm both load (if `www` configured):
-   - `https://bseweldingengineeringlimited.ca`
-   - `https://www.bseweldingengineeringlimited.ca`
-3. Check GitHub Pages shows domain as connected.
+After DNS propagates, verify:
 
-## If Domain Changes
-
-Update both:
-
-- `CNAME`
-- GitHub Pages `Custom domain` field
+1. `bseweldingengineeringlimited.ca` resolves to the site.
+2. GitHub Pages shows the domain as connected.
+3. HTTPS can be enforced successfully.
+4. The live page matches the latest repository version.

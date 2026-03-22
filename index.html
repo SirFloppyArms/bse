@@ -3,33 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BSE Welding Engineering Limited - website under construction." />
-  <title>BSE Welding Engineering Limited | Under Construction</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1" />
-  <link rel="shortcut icon" href="favicon.svg?v=1" />
+  <meta
+    name="description"
+    content="BSE Welding Engineering Limited is preparing its official website. A full company site with services and contact details will be published soon."
+  />
+  <meta name="theme-color" content="#121516" />
+  <meta property="og:title" content="BSE Welding Engineering Limited" />
+  <meta
+    property="og:description"
+    content="Official website launching soon. This temporary page confirms the business website is currently under construction."
+  />
+  <meta property="og:type" content="website" />
+  <title>BSE Welding Engineering Limited | Official Website Launching Soon</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+  <link rel="shortcut icon" href="favicon.svg?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="shell">
-    <section class="card" aria-labelledby="page-title">
-      <p class="badge">BSE Welding Engineering Limited</p>
-      <h1 id="page-title">Website Under Construction</h1>
-      <p>
-        The official BSE website is currently being finalized.
-        A full version with company details, services, and contact information will be published soon.
-      </p>
-      <p class="muted">
-        Domain planned: <strong>bseweldingengineeringlimited.ca</strong>
-      </p>
-    </section>
-  </main>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="BSE Welding Engineering Limited home">
+        <span class="brand-mark" aria-hidden="true">BSE</span>
+        <span class="brand-copy">
+          <strong>BSE Welding Engineering Limited</strong>
+          <span>Official website launching soon</span>
+        </span>
+      </a>
+    </header>
 
-  <footer>
-    <p>&copy; <span id="year"></span> BSE Welding Engineering Limited</p>
-  </footer>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Temporary Website</p>
+          <h1 id="page-title">A professional online presence is currently under construction.</h1>
+          <p class="lead">
+            BSE Welding Engineering Limited is preparing its official website.
+            A full version with company information, service details, and contact information
+            will be published here soon.
+          </p>
+
+          <div class="hero-actions" aria-label="Launch information">
+            <span class="primary-link" aria-label="Official domain: bseweldingengineeringlimited.ca">
+              bseweldingengineeringlimited.ca
+            </span>
+            <p class="launch-note">Domain scheduled to go live as the official launch address.</p>
+          </div>
+        </div>
+
+        <aside class="status-panel" aria-label="Project status">
+          <p class="panel-label">Current Status</p>
+          <ul class="status-list">
+            <li>
+              <span class="status-dot" aria-hidden="true"></span>
+              Temporary holding page is online
+            </li>
+            <li>
+              <span class="status-dot" aria-hidden="true"></span>
+              Custom domain setup is being prepared
+            </li>
+            <li>
+              <span class="status-dot" aria-hidden="true"></span>
+              Full business website is in development
+            </li>
+          </ul>
+
+          <div class="launch-card">
+            <p class="launch-label">Official domain</p>
+            <p class="launch-domain">bseweldingengineeringlimited.ca</p>
+          </div>
+        </aside>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-rule" aria-hidden="true"></div>
+      <div class="footer-content">
+        <p class="footer-brand">BSE Welding Engineering Limited</p>
+        <p class="footer-copy">
+          Temporary website in place while the official site is being completed.
+        </p>
+        <p class="footer-meta">
+          <span>&copy; <span id="year"></span></span>
+          <span class="footer-separator" aria-hidden="true"></span>
+          <span>Official launch address: bseweldingengineeringlimited.ca</span>
+        </p>
+      </div>
+    </footer>
+  </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
