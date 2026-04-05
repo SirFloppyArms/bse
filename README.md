@@ -12,6 +12,8 @@ Launch site for **BSE Welding Engineering Limited**, intended to be published on
 - `favicon.ico` - root fallback icon
 - `CNAME` - GitHub Pages custom domain target
 - `.nojekyll` - tells GitHub Pages to serve the site as plain static files
+- `robots.txt` - allows crawling and points search engines to the sitemap
+- `sitemap.xml` - homepage URL for discovery and reindexing
 
 ## Local Check
 
@@ -34,7 +36,7 @@ Open `index.html` in a browser and confirm:
 
 ## Custom Domain Setup
 
-This repository already includes the correct `CNAME` file:
+This repository includes the correct `CNAME` file:
 
 `bseweldingengineeringlimited.ca`
 
