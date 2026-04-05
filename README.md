@@ -1,6 +1,6 @@
-# BSE Welding Engineering Limited Temporary Website
+# BSE Welding Engineering Limited Website
 
-Temporary launch site for **BSE Welding Engineering Limited**, intended to be published on GitHub Pages and then connected to the custom domain:
+Launch site for **BSE Welding Engineering Limited**, intended to be published on GitHub Pages and then connected to the custom domain:
 
 `bseweldingengineeringlimited.ca`
 
@@ -8,7 +8,8 @@ Temporary launch site for **BSE Welding Engineering Limited**, intended to be pu
 
 - `index.html` - responsive temporary homepage
 - `styles.css` - visual design and responsive layout
-- `favicon.svg` - site icon
+- `assets/icons/` - favicon set and web manifest
+- `favicon.ico` - root fallback icon
 - `CNAME` - GitHub Pages custom domain target
 - `.nojekyll` - tells GitHub Pages to serve the site as plain static files
 
@@ -18,7 +19,7 @@ Open `index.html` in a browser and confirm:
 
 - layout looks correct on desktop
 - layout collapses cleanly on mobile width
-- the page clearly states the website is under construction
+- the page content looks correct and professional
 
 ## GitHub Pages Publish
 
