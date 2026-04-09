@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="Professional welding engineering services for structural steel, aluminum, and infrastructure programs." />
   <meta name="twitter:image" content="https://bseweldingengineeringlimited.ca/assets/logo_with_text.png" />
   <link rel="canonical" href="https://bseweldingengineeringlimited.ca/" />
-  <title>BSE Welding Engineering Limited | Welding Engineering Consulting</title>
+  <title>BSE Welding Engineering Limited</title>
   <link rel="icon" type="image/png" sizes="any" href="./assets/icons/favicon.png?v=5" />
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png?v=5" />
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png?v=5" />
@@ -214,7 +214,28 @@
   </footer>
 
   <script>
+    const header = document.querySelector(".site-header");
+    const root = document.documentElement;
+
+    const updateAnchorOffset = () => {
+      if (!header) {
+        return;
+      }
+
+      root.style.setProperty("--anchor-offset", `${Math.ceil(header.getBoundingClientRect().height)}px`);
+    };
+
     document.getElementById("year").textContent = new Date().getFullYear();
+    updateAnchorOffset();
+
+    if ("ResizeObserver" in window && header) {
+      const observer = new ResizeObserver(updateAnchorOffset);
+      observer.observe(header);
+    } else {
+      window.addEventListener("resize", updateAnchorOffset);
+    }
+
+    window.addEventListener("load", updateAnchorOffset);
   </script>
 </body>
 </html>
