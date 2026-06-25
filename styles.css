@@ -288,12 +288,7 @@ h4 {
 
 h1 {
 
-  font-size:
-    clamp(2.9rem, 6vw, 5rem);
-
   margin-bottom: 1.25rem;
-
-  max-width: 12ch;
 }
 
 h2 {
@@ -496,11 +491,16 @@ p {
 
 .hero {
 
-  min-height: 82vh;
+  min-height:
+    calc(100svh - var(--anchor-offset));
 
   display: flex;
 
   align-items: center;
+
+  padding:
+    clamp(1rem, 2vw, 2rem)
+    0;
 }
 
 .hero-layout {
@@ -508,20 +508,22 @@ p {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 2fr)
-    minmax(320px, 1fr);
+    minmax(0, 1.7fr)
+    minmax(300px, 0.8fr);
 
-  gap: 3rem;
+  gap: 2rem;
 
-  align-items: start;
+  align-items: center;
 }
 
 .hero-copy {
 
+  max-width: 760px;
+
   background: var(--surface);
 
   padding:
-    clamp(2rem, 4vw, 4rem);
+    clamp(1.5rem, 2.5vw, 2.5rem);
 
   border-radius:
     var(--radius-lg);
@@ -535,14 +537,81 @@ p {
 
 .hero-copy h1 {
 
+  font-size:
+    clamp(
+      1.9rem,
+      2.8vw,
+      3rem
+    );
+
+  line-height: 1.05;
+
+  letter-spacing:
+    -0.04em;
+
   max-width: 13ch;
+
+  margin-bottom: 1rem;
+}
+
+.lead {
+
+  font-size:
+    clamp(
+      1.1rem,
+      1.5vw,
+      1.35rem
+    );
+
+  font-weight: 700;
+
+  color: var(--primary);
+
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+
+  max-width: 60ch;
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+
+  margin-bottom: 0;
+}
+
+.eyebrow {
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  color: var(--accent);
+
+  margin-bottom: 1rem;
+}
+
+.hero-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  margin-top: 1.75rem;
 }
 
 .hero-panel {
 
   background: var(--surface);
 
-  padding: 2rem;
+  padding: 1.5rem;
 
   border-radius:
     var(--radius-lg);
@@ -556,7 +625,7 @@ p {
 
 .panel-logo {
 
-  width: 140px;
+  width: 110px;
 
   margin-bottom: 1rem;
 }
@@ -579,9 +648,11 @@ p {
 
 .panel-list li {
 
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.45rem;
 
-  color: var(--text);
+  line-height: 1.45;
+
+  font-size: 0.95rem;
 }
 
 /* ==================================================
@@ -967,7 +1038,7 @@ p {
 
   width: 100%;
 
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
 
   object-fit: cover;
 
@@ -998,10 +1069,10 @@ p {
 }
 
 /* ==================================================
-   COMMUNITY
+   COMMUNITY SUPPORT
 ================================================== */
 
-.community-grid {
+.community-logo-grid {
 
   display: grid;
 
@@ -1011,7 +1082,15 @@ p {
   gap: 1.75rem;
 }
 
-.community-card {
+.community-logo-card {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
 
   background: var(--surface);
 
@@ -1019,79 +1098,62 @@ p {
     1px solid var(--border);
 
   border-radius:
-    var(--radius-md);
+    var(--radius-lg);
 
   padding: 2rem;
+
+  text-decoration: none;
+
+  color: inherit;
 
   box-shadow:
     var(--shadow-sm);
 
   transition:
     transform var(--transition),
-    box-shadow var(--transition);
+    box-shadow var(--transition),
+    border-color var(--transition);
 }
 
-.community-card:hover {
+.community-logo-card:hover {
 
   transform:
-    translateY(-4px);
+    translateY(-5px);
 
   box-shadow:
     var(--shadow-md);
+
+  border-color:
+    rgba(15,75,112,.20);
 }
 
-.community-card h3 {
+.community-logo-card img {
+
+  width: auto;
+
+  max-width: 180px;
+
+  max-height: 90px;
+
+  object-fit: contain;
+
+  margin-bottom: 1.5rem;
+}
+
+.community-logo-card h3 {
 
   color: var(--primary);
+
+  margin-bottom: .75rem;
 }
 
-.community-card p {
-
-  margin-bottom: 1rem;
-}
-
-.community-card a {
-
-  font-weight: 700;
-
-  text-decoration: none;
-}
-
-.community-card a:hover {
-
-  text-decoration: underline;
-}
-
-/* ==================================================
-   TESTIMONIALS
-================================================== */
-
-.testimonial-placeholder {
-
-  background: var(--surface);
-
-  border:
-    1px dashed var(--border-dark);
-
-  border-radius:
-    var(--radius-lg);
-
-  padding:
-    3rem;
-
-  text-align: center;
-
-  box-shadow:
-    var(--shadow-sm);
-}
-
-.testimonial-placeholder p {
+.community-logo-card p {
 
   margin: 0;
 
   color: var(--text-light);
 
-  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 /* ==================================================
@@ -1153,118 +1215,6 @@ p {
   margin-top: 0.5rem;
 
   line-height: 1.8;
-}
-
-/* ==================================================
-   FINAL CTA SECTION
-================================================== */
-
-.final-cta {
-
-  position: relative;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--primary-dark)
-    );
-
-  color: var(--white);
-
-  padding:
-    clamp(4rem, 8vw, 6rem)
-    0;
-}
-
-.final-cta::before {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(255,255,255,.12),
-      transparent 40%
-    );
-
-  pointer-events: none;
-}
-
-.final-cta-inner {
-
-  position: relative;
-
-  z-index: 1;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 3rem;
-}
-
-.final-cta .section-kicker {
-
-  color: rgba(255,255,255,.8);
-}
-
-.final-cta h2 {
-
-  color: var(--white);
-
-  max-width: 18ch;
-
-  margin-bottom: 0;
-}
-
-.final-cta-actions {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 1rem;
-}
-
-.final-cta .primary-link {
-
-  background: var(--white);
-
-  color: var(--primary);
-
-  border-color: var(--white);
-
-  box-shadow: none;
-}
-
-.final-cta .primary-link:hover {
-
-  background:
-    rgba(255,255,255,.92);
-
-  color: var(--primary-dark);
-}
-
-.final-cta .secondary-link {
-
-  color: var(--white);
-
-  border-color: rgba(255,255,255,.6);
-}
-
-.final-cta .secondary-link:hover {
-
-  background:
-    rgba(255,255,255,.12);
 }
 
 /* ==================================================
@@ -1378,6 +1328,131 @@ p {
    TABLET RESPONSIVENESS
 =================================================== */
 
+/* ==================================================
+   HERO RESPONSIVENESS
+=================================================== */
+
+@media (max-width: 1200px) {
+
+  .hero-layout {
+
+    gap: 1.5rem;
+  }
+
+  .hero-copy h1 {
+
+    font-size:
+      clamp(
+        1.9rem,
+        3vw,
+        2.8rem
+      );
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .hero {
+
+    min-height: auto;
+  }
+
+  .hero-layout {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 2rem;
+  }
+
+  .hero-copy {
+
+    max-width: none;
+  }
+
+  .hero-panel {
+
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+
+    min-height: auto;
+
+    padding:
+      2rem
+      0;
+  }
+
+  .hero-layout {
+
+    gap: 1.5rem;
+  }
+
+  .hero-copy {
+
+    padding: 2rem;
+  }
+
+  .hero-panel {
+
+    padding: 1.5rem;
+  }
+
+  .hero-copy h1 {
+
+    font-size:
+      clamp(
+        1.9rem,
+        7vw,
+        2.6rem
+      );
+
+    max-width: none;
+  }
+
+  .hero-actions {
+
+    flex-direction: column;
+  }
+
+  .hero-actions a {
+
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-copy {
+
+    padding: 1.5rem;
+  }
+
+  .hero-panel {
+
+    padding: 1.25rem;
+  }
+
+  .hero-copy h1 {
+
+    font-size:
+      clamp(
+        1.75rem,
+        8vw,
+        2.2rem
+      );
+  }
+
+  .hero-text {
+
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 1100px) {
 
   .hero-layout {
@@ -1480,13 +1555,13 @@ p {
     padding: 2rem;
   }
 
-  h1 {
+  .hero-copy h1 {
 
     font-size:
       clamp(
-        2.3rem,
-        8vw,
-        3.5rem
+        1.8rem,
+        6vw,
+        2.4rem
       );
   }
 
@@ -1717,25 +1792,6 @@ p {
 }
 
 /* ==================================================
-   ACCESSIBILITY
-=================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-
-    scroll-behavior: auto;
-  }
-
-  * {
-
-    animation: none !important;
-
-    transition: none !important;
-  }
-}
-
-/* ==================================================
    FINAL POLISH
 =================================================== */
 
@@ -1743,15 +1799,6 @@ p {
 
   background:
     rgba(15,75,112,.18);
-}
-
-:focus-visible {
-
-  outline:
-    3px solid var(--accent);
-
-  outline-offset:
-    3px;
 }
 
 .service-card,
@@ -1778,19 +1825,4 @@ p {
 
   border:
     1px solid rgba(15,75,112,.05);
-}
-
-.site-header.scrolled {
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
-}
-
-body.loaded .hero-copy,
-body.loaded .hero-panel {
-
-  opacity: 1;
-
-  transform:
-    translateY(0);
 }
