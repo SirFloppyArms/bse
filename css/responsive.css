@@ -1,0 +1,462 @@
+/* ==================================================
+   HERO RESPONSIVENESS
+================================================== */
+
+@media (max-width: 1200px) {
+
+  .hero-layout {
+
+    gap: 1.5rem;
+  }
+
+  .hero-copy h1 {
+
+    font-size:
+      clamp(
+        1.9rem,
+        3vw,
+        2.8rem
+      );
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .hero {
+
+    min-height: auto;
+
+    padding:
+      3rem
+      0
+      2rem;
+  }
+
+  .hero-layout {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 2rem;
+  }
+
+  .hero-copy {
+
+    max-width: none;
+  }
+
+  .hero-panel {
+
+    max-width: 700px;
+  }
+
+  .standards-layout {
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .team-card {
+
+    grid-template-columns:
+      240px 1fr;
+  }
+
+  .hero-logos {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+
+    min-height: auto;
+
+    padding:
+      2rem
+      0;
+  }
+
+  .hero-layout {
+
+    gap: 1.5rem;
+  }
+
+  .hero-copy {
+
+    padding: 2rem;
+
+    border-radius:
+      var(--radius-md);
+  }
+
+  .hero-panel {
+
+    padding: 1.5rem;
+
+    border-radius:
+      var(--radius-md);
+  }
+
+  .hero-copy h1 {
+
+    font-size:
+      clamp(
+        1.85rem,
+        6vw,
+        2.4rem
+      );
+
+    max-width: none;
+  }
+
+  .hero-actions {
+
+    flex-direction: column;
+  }
+
+  .hero-actions a {
+
+    width: 100%;
+  }
+
+  .hero-logos {
+
+    margin-top: 1.5rem;
+
+    padding: 1.25rem 1rem;
+  }
+
+  .hero-logos-grid a {
+
+    width: 100px;
+
+    height: 60px;
+  }
+
+  .section-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-logos-grid img {
+
+    max-height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-copy {
+
+    padding: 1.5rem;
+  }
+
+  .hero-panel {
+
+    padding: 1.25rem;
+  }
+
+  .hero-copy h1 {
+
+    font-size:
+      clamp(
+        1.65rem,
+        8vw,
+        2rem
+      );
+  }
+
+  .hero-text {
+
+    font-size: 1rem;
+  }
+
+  .hero-logos-grid a {
+
+    width: 90px;
+
+    height: 54px;
+  }
+
+  .hero-logos-grid img {
+
+    max-height: 26px;
+  }
+
+  .panel-logo {
+    width: 80px;
+  }
+}
+
+/* ==================================================
+   TABLET / LARGE SCREEN RESPONSIVENESS
+================================================== */
+
+@media (max-width: 992px) {
+
+  .footer-inner {
+
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  .footer-brand {
+
+    grid-column:
+      1 / -1;
+  }
+
+  .footer-bottom {
+
+    justify-content: center;
+
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .section {
+
+    padding:
+      4.5rem
+      0;
+  }
+
+  h2 {
+
+    font-size:
+      clamp(
+        1.8rem,
+        6vw,
+        2.6rem
+      );
+  }
+
+  .team-card {
+
+    grid-template-columns:
+      1fr;
+
+    text-align: center;
+  }
+
+  .team-image-wrapper {
+
+    max-width: 320px;
+
+    margin-inline: auto;
+  }
+
+  .contact-layout {
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .footer-inner {
+
+    grid-template-columns:
+      1fr;
+
+    text-align: center;
+  }
+
+  .footer-brand p {
+
+    margin-inline: auto;
+  }
+
+  .footer-logo {
+
+    margin-inline: auto;
+  }
+
+  .footer-bottom {
+
+    flex-direction: column;
+  }
+}
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media (max-width: 576px) {
+
+  .shell {
+
+    width: min(94%, var(--max-width));
+  }
+
+  .brand-logo-with-text {
+
+    width:
+      min(200px, 60vw);
+  }
+
+  .hero-copy,
+  .hero-panel,
+  .service-card,
+  .industry-card,
+  .community-logo-card,
+  .contact-card,
+  .standards-card {
+
+    padding: 1.5rem;
+  }
+
+  .primary-link,
+  .secondary-link {
+
+    width: 100%;
+
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  .hero-actions {
+
+    flex-direction: column;
+  }
+
+  .footer-inner {
+
+    padding:
+      4rem 0
+      1.5rem;
+  }
+
+  .footer-logo {
+
+    width: 220px;
+  }
+
+  .hero-logos-grid {
+    gap: 0.6rem;
+  }
+
+  .community-logo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================================================
+   LARGE SCREENS
+================================================== */
+
+@media (min-width: 1600px) {
+
+  :root {
+
+    --max-width: 1380px;
+  }
+
+  .hero {
+
+    min-height: 85vh;
+  }
+}
+
+/* ==================================================
+   PRINT STYLES
+================================================== */
+
+@media print {
+
+  * {
+
+    background:
+      transparent !important;
+
+    color:
+      #000 !important;
+
+    box-shadow:
+      none !important;
+
+    text-shadow:
+      none !important;
+  }
+
+  body {
+
+    background: white;
+  }
+
+  .background-overlay,
+  .site-nav,
+  .nav-toggle,
+  .mobile-nav-panel,
+  .hero-actions,
+  .hero-bg,
+  .hero-logos,
+  .footer-bottom {
+
+    display: none !important;
+  }
+
+  .site-header {
+
+    position: static;
+
+    border-bottom:
+      2px solid #000;
+  }
+
+  .section {
+
+    padding:
+      1.5rem
+      0;
+  }
+
+  a {
+
+    text-decoration:
+      underline;
+  }
+
+  .service-card,
+  .industry-card,
+  .community-logo-card,
+  .contact-card,
+  .team-card,
+  .standards-card {
+
+    border:
+      1px solid #000;
+  }
+}
+
+/* ==================================================
+   FINAL POLISH
+================================================== */
+
+::selection {
+
+  background:
+    rgba(15,75,112,.18);
+}
+
+.service-card,
+.industry-card,
+.community-logo-card,
+.contact-card,
+.standards-card,
+.team-card,
+.hero-logos-grid a {
+
+  will-change:
+    transform;

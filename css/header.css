@@ -1,0 +1,400 @@
+/* ==================================================
+   HERO WRAPPER (unified background for header + hero)
+================================================== */
+
+.hero-wrapper {
+
+  position: relative;
+
+  /* No min-height — wraps content naturally.
+     The hero section inside handles its own height. */
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  /* Fully transparent — the engineering drawing shows through.
+     Only the blur and border provide the glass effect. */
+  background:
+    rgba(16, 24, 32, 0.55);
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.15);
+
+  transition:
+    background var(--transition-slow),
+    border-color var(--transition-slow),
+    box-shadow var(--transition-slow);
+}
+
+/* Slightly more opaque when scrolled past hero for readability
+   over lighter content sections */
+.site-header.header-scrolled {
+
+  background:
+    rgba(16, 24, 32, 0.88);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.20);
+}
+
+.header-inner {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  min-height:
+    var(--header-height);
+
+  padding:
+    0.5rem 0;
+}
+
+.brand {
+
+  flex-shrink: 0;
+
+  text-decoration: none;
+}
+
+.brand-logo-with-text {
+
+  width:
+    clamp(180px, 18vw, 280px);
+
+  height: auto;
+
+  display: block;
+
+  filter:
+    brightness(1.05);
+
+  transition:
+    filter var(--transition);
+}
+
+/* ---------- DESKTOP NAV ---------- */
+
+.site-nav {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: clamp(1rem, 1.6vw, 1.8rem);
+}
+
+.site-nav a {
+
+  position: relative;
+
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-weight: 700;
+
+  font-size: clamp(0.86rem, 0.35vw + 0.75rem, 0.96rem);
+
+  white-space: nowrap;
+
+  transition:
+    color var(--transition);
+}
+
+.site-nav a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--accent);
+
+  transition:
+    width var(--transition);
+}
+
+.site-nav a:hover {
+
+  color: #ffffff;
+}
+
+.site-nav a:hover::after {
+
+  width: 100%;
+}
+
+/* ---------- HAMBURGER TOGGLE ---------- */
+
+.nav-toggle {
+
+  display: none;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  transition:
+    background var(--transition-fast);
+}
+
+.nav-toggle:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+.nav-toggle-bar {
+
+  display: block;
+
+  width: 24px;
+  height: 3px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  border-radius: 2px;
+
+  transition:
+    transform var(--transition-slow),
+    opacity var(--transition-fast),
+    background var(--transition-fast);
+
+  transform-origin: center;
+}
+
+.nav-toggle:hover .nav-toggle-bar {
+  background: #ffffff;
+}
+
+/* Hamburger -> X animation */
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+
+  transform:
+    translateY(8px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+
+  transform:
+    translateY(-8px) rotate(-45deg);
+}
+
+/* ---------- MOBILE NAV PANEL ---------- */
+
+.mobile-nav-panel {
+
+  position: fixed;
+
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+
+  z-index: 999;
+
+  overflow-y: auto;
+
+  /* Dark glass to match hero */
+  background:
+    rgba(16, 24, 32, 0.95);
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.30);
+
+  /* GPU-accelerated slide */
+  transform: translateY(-110%);
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    transform var(--transition-slow) cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s var(--transition-slow);
+}
+
+.mobile-nav-panel[aria-hidden="false"] {
+
+  transform: translateY(0);
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transition:
+    transform var(--transition-slow) cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s 0s;
+
+  max-height: calc(
+    100svh - var(--header-height)
+  );
+}
+
+/* Accent stripe at top of the panel */
+.mobile-nav-panel::before {
+
+  content: "";
+
+  display: block;
+
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--accent)
+  );
+
+  flex-shrink: 0;
+}
+
+.mobile-nav {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+
+  width: 100%;
+
+  padding:
+    0.75rem
+    1.25rem
+    1.5rem;
+}
+
+.mobile-nav a {
+
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 0.80);
+
+  font-family:
+    "Manrope",
+    sans-serif;
+
+  font-weight: 600;
+
+  font-size: 1.05rem;
+
+  letter-spacing: 0.01em;
+
+  padding:
+    0.9rem 1rem;
+
+  border-radius:
+    var(--radius-sm);
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    padding var(--transition-fast);
+}
+
+.mobile-nav a:not(:last-of-type) {
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-nav a:hover {
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #ffffff;
+
+  padding-left: 1.35rem;
+}
+
+.mobile-nav a:active {
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  color: var(--accent);
+}
+
+/* ---------- RESPONSIVE: COLLAPSE NAV ---------- */
+
+@media (max-width: 1120px) {
+
+  .site-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
+

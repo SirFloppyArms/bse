@@ -1,0 +1,422 @@
+/* ==================================================
+   HERO SECTION
+================================================== */
+
+.hero {
+
+  position: relative;
+
+  min-height:
+    calc(100svh - var(--anchor-offset));
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    clamp(1rem, 2vw, 2rem)
+    0;
+}
+
+/* ----- Engineering drawing background – full hero ----- */
+
+.hero-bg {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  /* Multi-layer gradient for deep, rich visual depth:
+     1. Dark navy base gradient (brand color)
+     2. Radial accent spotlight at center
+     3. Subtle vignette edge darkening
+     4. Engineering drawing image
+  */
+  background:
+    /* Vignette – darkest at edges */
+    radial-gradient(
+      ellipse 100% 80% at 50% 50%,
+      transparent 40%,
+      rgba(8, 20, 35, 0.35) 100%
+    ),
+    /* Engineering drawing image – darkened with blend */
+    linear-gradient(
+      rgba(15, 75, 112, 0.82),
+      rgba(9, 50, 74, 0.88)
+    ),
+    url("../assets/backgrounds/engineering-drawing.png");
+
+  background-size:
+    cover,
+    cover,
+    cover;
+
+  background-position:
+    center center,
+    center center,
+    center center;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat;
+
+  /* Subtle texture overlay via pseudo-element for a premium feel */
+}
+
+/* Subtle noise/grain texture overlay */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Ensure hero content sits above the background */
+
+.hero > .shell {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(300px, 0.8fr);
+
+  gap: 2rem;
+
+  align-items: center;
+}
+
+/* ----- Glass-morphism content card ----- */
+
+.hero-copy {
+
+  max-width: 760px;
+
+  background:
+    rgba(16, 24, 32, 0.65);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  padding:
+    clamp(1.75rem, 2.5vw, 2.75rem);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+}
+
+.hero-copy h1 {
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      2rem,
+      2.8vw,
+      3.1rem
+    );
+
+  line-height: 1.05;
+
+  letter-spacing:
+    -0.04em;
+
+  max-width: 14ch;
+
+  margin-bottom: 1rem;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.lead {
+
+  font-size:
+    clamp(
+      1.1rem,
+      1.5vw,
+      1.35rem
+    );
+
+  font-weight: 700;
+
+  color: #d4e4f0;
+
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+
+  max-width: 60ch;
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+
+  margin-bottom: 0;
+
+  color: rgba(255,255,255,0.85);
+}
+
+.hero .eyebrow {
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  color: #f5c542;
+
+  margin-bottom: 1rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero .eyebrow::before,
+.hero .eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: rgba(245, 197, 66, 0.35);
+}
+
+.hero-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+/* ----- Glass-morphism sidebar panel ----- */
+
+.hero-panel {
+
+  background:
+    rgba(16, 24, 32, 0.65);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  padding: 1.75rem;
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+}
+
+.panel-logo {
+
+  width: 100px;
+
+  margin-bottom: 1rem;
+
+  filter:
+    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+.panel-label {
+
+  font-weight: 800;
+
+  color: #d4e4f0;
+
+  margin-bottom: 1rem;
+
+  letter-spacing: 0.02em;
+}
+
+.panel-list {
+
+  margin: 0;
+
+  padding-left: 1.2rem;
+}
+
+.panel-list li {
+
+  margin-bottom: 0.5rem;
+
+  line-height: 1.45;
+
+  font-size: 0.95rem;
+
+  color: rgba(255,255,255,0.88);
+}
+
+.panel-list li::marker {
+  color: var(--accent);
+}
+
+/* ==================================================
+   HERO LOGOS (affiliations moved into hero)
+================================================== */
+
+.hero-logos {
+
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 2.5rem;
+
+  text-align: center;
+
+  /* Subtle background strip to separate logos from hero content */
+  padding: 1.5rem 1.25rem;
+
+  background:
+    rgba(8, 20, 35, 0.30);
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+
+  border-radius:
+    var(--radius-md);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hero-logos-label {
+
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  color: rgba(255,255,255,0.7);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.14em;
+
+  font-weight: 700;
+
+  font-size: 0.75rem;
+}
+
+.hero-logos-grid {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.75rem 1rem;
+}
+
+.hero-logos-grid a {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 120px;
+
+  height: 68px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  backdrop-filter:
+    blur(4px);
+
+  -webkit-backdrop-filter:
+    blur(4px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius:
+    var(--radius-sm);
+
+  padding: 0.6rem;
+
+  text-decoration: none;
+
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    border-color var(--transition);
+}
+
+.hero-logos-grid a:hover {
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border-color:
+    rgba(255, 255, 255, 0.18);
+
+  transform:
+    translateY(-3px);
+}
+
+.hero-logos-grid img {
+
+  max-height: 38px;
+
+  width: auto;
+
+  object-fit: contain;
+
+  filter:
+    brightness(0.95) contrast(1.05);
+
+  transition:
+    filter var(--transition);
+}
+
+.hero-logos-grid a:hover img {
+  filter:
+    brightness(1.05) contrast(1.1);
+}
+

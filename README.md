@@ -7,7 +7,9 @@ Launch site for **BSE Welding Engineering Limited**, intended to be published on
 ## Files
 
 - `index.html` - responsive temporary homepage
-- `styles.css` - visual design and responsive layout
+- `styles.css` - stylesheet entrypoint that imports modular CSS files
+- `css/` - organized stylesheet modules (foundation, header, hero, components, footer, responsive)
+- `js/main.js` - site behavior (header state, mobile nav, dynamic footer year)
 - `assets/icons/` - favicon set and web manifest
 - `favicon.ico` - root fallback icon
 - `CNAME` - GitHub Pages custom domain target

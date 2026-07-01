@@ -1,0 +1,390 @@
+/* ==================================================
+   BSE WELDING ENGINEERING LIMITED
+   PRODUCTION STYLESHEET
+================================================== */
+
+/* ==================================================
+   ROOT VARIABLES
+================================================== */
+
+:root {
+
+  --primary: #0f4b70;
+  --primary-dark: #09324a;
+
+  --accent: #d88b1f;
+  --accent-dark: #b97212;
+
+  --text: #1b2733;
+  --text-light: #5f6f7d;
+
+  --white: #ffffff;
+
+  --bg: #f4f7fa;
+  --surface: #ffffff;
+
+  --border: #d8e2ea;
+  --border-dark: #c4d0da;
+
+  --success: #2f7a43;
+
+  --shadow-sm:
+    0 2px 12px rgba(0, 0, 0, 0.04);
+
+  --shadow-md:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  --shadow-lg:
+    0 18px 50px rgba(0, 0, 0, 0.12);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --max-width: 1240px;
+
+  --anchor-offset: 100px;
+
+  --transition-fast: 180ms ease;
+  --transition: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  --header-height: 64px;
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+  scroll-padding-top:
+    var(--anchor-offset);
+
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+
+  margin: 0;
+
+  font-family:
+    "Source Sans 3",
+    sans-serif;
+
+  color: var(--text);
+
+  background-color: var(--bg);
+
+  line-height: 1.7;
+
+  min-width: 320px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+
+  display: block;
+
+  max-width: 100%;
+
+  height: auto;
+}
+
+picture {
+  display: block;
+}
+
+a {
+
+  color: var(--primary);
+
+  text-decoration-thickness: 2px;
+
+  text-underline-offset: 2px;
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--anchor-offset) + 0.75rem);
+}
+
+button,
+input,
+textarea,
+select {
+
+  font: inherit;
+}
+
+ul,
+ol {
+
+  padding-left: 1.35rem;
+}
+
+address {
+
+  font-style: normal;
+}
+
+hr {
+
+  border: 0;
+
+  border-top:
+    1px solid var(--border);
+}
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+.skip-link {
+
+  position: absolute;
+
+  left: 1rem;
+  top: -100px;
+
+  background: var(--primary);
+
+  color: white;
+
+  padding:
+    0.85rem 1.25rem;
+
+  border-radius:
+    var(--radius-sm);
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  z-index: 5000;
+
+  transition:
+    top var(--transition-fast);
+}
+
+.skip-link:focus {
+
+  top: 1rem;
+}
+
+:focus-visible {
+
+  outline:
+    3px solid var(--accent);
+
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}
+
+/* ==================================================
+   BACKGROUND OVERLAY
+================================================== */
+
+.background-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.97),
+      rgba(255,255,255,0.97)
+    );
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+}
+
+/* ==================================================
+   LAYOUT
+================================================== */
+
+.shell {
+
+  width:
+    min(92%, var(--max-width));
+
+  margin-inline: auto;
+}
+
+.section > .shell {
+  width: min(92%, var(--max-width));
+}
+
+.section {
+
+  padding:
+    clamp(4rem, 8vw, 7rem)
+    0;
+}
+
+.section-muted {
+
+  background:
+    rgba(255,255,255,0.72);
+
+  backdrop-filter:
+    blur(8px);
+
+  border-top:
+    1px solid var(--border);
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+/* ==================================================
+   TYPOGRAPHY
+================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+
+  margin-top: 0;
+
+  font-family:
+    "Manrope",
+    sans-serif;
+
+  line-height: 1.15;
+
+  color: var(--text);
+}
+
+h1 {
+
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+
+  font-size:
+    clamp(2rem, 4vw, 3.3rem);
+
+  margin-bottom: 1rem;
+}
+
+h3 {
+
+  font-size:
+    1.35rem;
+
+  margin-bottom: 0.8rem;
+}
+
+p {
+
+  margin-top: 0;
+
+  margin-bottom: 1rem;
+}
+
+.eyebrow,
+.section-kicker {
+
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  font-weight: 800;
+
+  font-size: 0.84rem;
+}
+
+.lead {
+
+  font-size:
+    clamp(1.1rem, 2vw, 1.35rem);
+
+  font-weight: 700;
+
+  color: var(--primary);
+
+  margin-bottom: 1rem;
+}
+
+.hero-text,
+.section-text {
+
+  color: var(--text-light);
+
+  max-width: 68ch;
+}
+
+.section-heading {
+
+  text-align: center;
+
+  margin-bottom: 3.5rem;
+}
+
+.section-heading h2 {
+
+  max-width: 900px;
+
+  margin-inline: auto;
+}
+
+.section-heading-left {
+
+  text-align: left;
+}
+
+.section-heading-left h2 {
+
+  margin-inline: 0;
+}
+
