@@ -233,284 +233,322 @@
     aria-hidden="true"
   ></div>
 
-  <!-- ==================================================
-       SITE HEADER
-  =================================================== -->
+    <!-- ==================================================
+         HERO WRAPPER (unified background for header + hero)
+    =================================================== -->
 
-  <header
-    class="site-header"
-    id="top"
-  >
+    <div class="hero-wrapper">
 
-    <div class="shell header-inner">
+      <!-- Engineering drawing background – spans header + hero -->
 
-      <!-- BRAND -->
+      <div
+        class="hero-bg"
+        aria-hidden="true"
+      ></div>
 
-      <a
-        href="#top"
-        class="brand"
-        aria-label="BSE Welding Engineering Limited Home"
+      <!-- ==================================================
+           SITE HEADER
+      =================================================== -->
+
+      <header
+        class="site-header"
+        id="top"
       >
 
-        <img
-          src="./assets/logo_with_text.png"
-          alt="BSE Welding Engineering Limited"
-          class="brand-logo-with-text"
-          width="320"
-          height="92"
-          loading="eager"
-          decoding="async"
-        />
+        <div class="shell header-inner">
 
-      </a>
+          <!-- BRAND -->
 
-      <!-- NAVIGATION -->
+          <a
+            href="#top"
+            class="brand"
+            aria-label="BSE Welding Engineering Limited Home"
+          >
 
-      <nav
-        class="site-nav"
-        aria-label="Primary Navigation"
+            <img
+              src="./assets/logo_with_text.png"
+              alt="BSE Welding Engineering Limited"
+              class="brand-logo-with-text"
+              width="320"
+              height="92"
+              loading="eager"
+              decoding="async"
+            />
+
+          </a>
+
+          <!-- DESKTOP NAVIGATION -->
+
+          <nav
+            class="site-nav"
+            aria-label="Primary Navigation"
+          >
+
+            <a href="#services">Services</a>
+
+            <a href="#standards">Standards</a>
+
+            <a href="#industries">Industries</a>
+
+            <a href="#team">Team</a>
+
+            <a href="#community">Community</a>
+
+            <a href="#contact">Contact</a>
+
+          </nav>
+
+          <!-- HAMBURGER TOGGLE (mobile) -->
+
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+
+          <!-- MOBILE NAV PANEL -->
+
+          <div
+            class="mobile-nav-panel"
+            id="mobile-nav-panel"
+            aria-hidden="true"
+          >
+
+            <nav
+              class="mobile-nav"
+              aria-label="Mobile Navigation"
+            >
+
+              <a href="#services">Services</a>
+
+              <a href="#standards">Standards</a>
+
+              <a href="#industries">Industries</a>
+
+              <a href="#team">Team</a>
+
+              <a href="#community">Community</a>
+
+              <a href="#contact">Contact</a>
+
+            </nav>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- =============================================
+           HERO SECTION
+      ============================================== -->
+
+      <section
+        class="hero section"
+        id="home"
       >
 
-        <a href="#services">Services</a>
+        <div class="shell hero-layout">
 
-        <a href="#standards">Standards</a>
+          <!-- HERO CONTENT -->
 
-        <a href="#industries">Industries</a>
+          <div class="hero-copy">
 
-        <a href="#team">Team</a>
+            <p class="eyebrow">
+              BSE Welding Engineering Limited • Anola, Manitoba
+            </p>
 
-        <a href="#community">Community</a>
+            <h1>
+              CWB Retained Welding Engineering Services
+              Across North America
+            </h1>
 
-        <a href="#contact">Contact</a>
+            <p class="lead">
+              Professional Engineering Stamps Active
+              for Manitoba and Ontario.
+            </p>
 
-      </nav>
+            <p class="hero-text">
 
-    </div>
+              Need Professional Engineering Drawings
+              Stamped for Another Jurisdiction?
 
-  </header>
+            </p>
 
-  <!-- ==================================================
-       MAIN CONTENT
-  =================================================== -->
+            <div class="hero-actions">
 
-  <main
-    id="main-content"
-  >
+              <a
+                href="#contact"
+                class="primary-link"
+              >
+                Contact us to discuss options
+              </a>
 
-    <!-- =============================================
-         HERO SECTION
-    ============================================== -->
+            </div>
 
-    <section
-      class="hero section"
-      id="home"
-    >
+          </div>
 
-      <div class="shell hero-layout">
+          <!-- HERO SIDEBAR -->
 
-        <!-- HERO CONTENT -->
+          <aside class="hero-panel">
 
-        <div class="hero-copy">
+            <img
+              src="./assets/logo.png"
+              alt="BSE Welding Engineering Logo"
+              class="panel-logo"
+              width="140"
+              height="140"
+              loading="eager"
+              decoding="async"
+            />
 
-          <p class="eyebrow">
-            BSE Welding Engineering Limited • Anola, Manitoba
+            <p class="panel-label">
+              Professional Credentials
+            </p>
+
+            <ul class="panel-list">
+
+              <li>Professional Engineering Stamps</li>
+
+              <li>Active in Manitoba & Ontario</li>
+
+              <li>CSA W47.1 – Steel</li>
+
+              <li>CSA W47.2 – Aluminum</li>
+
+              <li>CSA W186 – Rebar</li>
+
+              <li>International Welding Engineer (IWE)</li>
+
+              <li>
+                IWE Designation with Welding Engineering
+                Credentials Recognized by 51 Countries
+              </li>
+
+            </ul>
+
+          </aside>
+
+        </div>
+
+        <!-- HERO LOGOS (affiliations moved here) -->
+
+        <div class="shell hero-logos">
+
+          <p class="hero-logos-label">
+            Recognized By
           </p>
 
-          <h1>
-            CWB Retained Welding Engineering Services
-            Across North America
-          </h1>
+          <div class="hero-logos-grid">
 
-          <p class="lead">
-            Professional Engineering Stamps Active
-            for Manitoba and Ontario.
-          </p>
-
-          <p class="hero-text">
-
-            Need Professional Engineering Drawings
-            Stamped for Another Jurisdiction?
-
-          </p>
-
-          <div class="hero-actions">
+            <!-- Engineers Geoscientists Manitoba -->
 
             <a
-              href="#contact"
-              class="primary-link"
+              href="https://www.enggeomb.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Engineers Geoscientists Manitoba"
             >
-              Contact us to discuss options
+              <img
+                src="./assets/logos/egm-logo.png"
+                alt="Engineers Geoscientists Manitoba"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+
+            <!-- CWB Group -->
+
+            <a
+              href="https://www.cwbgroup.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="CWB Group"
+            >
+              <img
+                src="./assets/logos/cwb-logo.png"
+                alt="CWB Group"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+
+            <!-- International Institute of Welding -->
+
+            <a
+              href="https://iiwelding.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="International Institute of Welding"
+            >
+              <img
+                src="./assets/logos/iiw-logo.png"
+                alt="International Institute of Welding"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+
+            <!-- Professional Engineers Ontario -->
+
+            <a
+              href="https://www.peo.on.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Professional Engineers Ontario"
+            >
+              <img
+                src="./assets/logos/peo-logo.png"
+                alt="Professional Engineers Ontario"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+
+            <!-- American Welding Society -->
+
+            <a
+              href="https://www.aws.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="American Welding Society"
+            >
+              <img
+                src="./assets/logos/aws-logo.png"
+                alt="American Welding Society"
+                loading="lazy"
+              />
             </a>
 
           </div>
 
         </div>
 
-        <!-- HERO SIDEBAR -->
+      </section>
 
-        <aside class="hero-panel">
+    </div><!-- /.hero-wrapper -->
 
-          <img
-            src="./assets/logo.png"
-            alt="BSE Welding Engineering Logo"
-            class="panel-logo"
-            width="140"
-            height="140"
-            loading="eager"
-            decoding="async"
-          />
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
 
-          <p class="panel-label">
-            Professional Credentials
-          </p>
-
-          <ul class="panel-list">
-
-            <li>Professional Engineering Stamps</li>
-
-            <li>Active in Manitoba & Ontario</li>
-
-            <li>CSA W47.1 – Steel</li>
-
-            <li>CSA W47.2 – Aluminum</li>
-
-            <li>CSA W186 – Rebar</li>
-
-            <li>International Welding Engineer (IWE)</li>
-
-            <li>
-              IWE Designation with Welding Engineering
-              Credentials Recognized by 51 Countries
-            </li>
-
-          </ul>
-
-        </aside>
-
-      </div>
-
-    </section>
-
-    <!-- =============================================
-         AFFILIATIONS SECTION
-    ============================================== -->
-
-    <section
-      class="section affiliations-section"
-      aria-labelledby="affiliations-heading"
+    <main
+      id="main-content"
     >
 
-      <div class="shell">
+      <!-- =============================================
+           SERVICES
+      ============================================== -->
 
-        <div class="section-heading">
-
-          <p class="section-kicker">
-            Affiliations & Certifications
-          </p>
-
-          <h2 id="affiliations-heading">
-            Recognized Engineering
-            and Welding Organizations
-          </h2>
-
-        </div>
-
-        <div class="logo-grid">
-
-          <!-- Engineers Geoscientists Manitoba -->
-
-          <a
-            href="https://www.enggeomb.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Engineers Geoscientists Manitoba"
-          >
-            <img
-              src="./assets/logos/egm-logo.png"
-              alt="Engineers Geoscientists Manitoba"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-
-          <!-- CWB Group -->
-
-          <a
-            href="https://www.cwbgroup.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="CWB Group"
-          >
-            <img
-              src="./assets/logos/cwb-logo.png"
-              alt="CWB Group"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-
-          <!-- International Institute of Welding -->
-
-          <a
-            href="https://iiwelding.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="International Institute of Welding"
-          >
-            <img
-              src="./assets/logos/iiw-logo.png"
-              alt="International Institute of Welding"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-
-          <!-- Professional Engineers Ontario -->
-
-          <a
-            href="https://www.peo.on.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Professional Engineers Ontario"
-          >
-            <img
-              src="./assets/logos/peo-logo.png"
-              alt="Professional Engineers Ontario"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-
-          <!-- American Welding Society -->
-
-          <a
-            href="https://www.aws.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="American Welding Society"
-          >
-            <img
-              src="./assets/logos/aws-logo.png"
-              alt="American Welding Society"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- =============================================
-         SERVICES
-    ============================================== -->
-
-    <section
-      id="services"
-      class="section"
-      aria-labelledby="services-heading"
+      <section
+        id="services"
+        class="section"
+        aria-labelledby="services-heading"
     >
 
       <div class="shell">
@@ -914,7 +952,7 @@
 
               <p>
 
-                With expertise in SolidWorks and welded fabrications, he excels in designing and detailing novel solutions for component and assembly design requirements to meet the needs of both the client and the end user. Outside of work Brian loves being a hockey family and camping during Manitoba’s beautiful summers.
+                With expertise in SolidWorks and welded fabrications, he excels in designing and detailing novel solutions for component and assembly design requirements to meet the needs of both the client and the end user. Outside of work Brian loves being a hockey family and camping during Manitoba's beautiful summers.
 
               </p>
 
@@ -1178,6 +1216,8 @@
 
     </section>
 
+  </main>
+
   <!-- ==================================================
        FOOTER
   =================================================== -->
@@ -1290,32 +1330,121 @@
 
     const header = document.querySelector(".site-header");
     const root = document.documentElement;
+    const navToggle = document.querySelector(".nav-toggle");
+    const mobilePanel = document.querySelector(".mobile-nav-panel");
+    const mobileLinks = document.querySelectorAll(".mobile-nav a");
+
+    /* ---- Scroll state: add .header-scrolled when past hero ---- */
+    const heroSection = document.querySelector(".hero");
+
+    function updateHeaderScrollState() {
+      if (!header || !heroSection) return;
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      const scrollY = window.scrollY;
+      header.classList.toggle(
+        "header-scrolled",
+        scrollY > heroBottom - window.innerHeight * 0.5
+      );
+    }
+
+    /* ---- Anchor offset (measured once + on window resize only) ---- */
+    /* NOTE: --header-height is a FIXED constant in CSS (64px).
+       We do NOT dynamically update it, because doing so creates a
+       feedback loop: changing min-height → ResizeObserver fires →
+       changes min-height again → infinite loop on iOS overscroll. */
 
     function updateAnchorOffset() {
-
       if (!header) return;
-
       root.style.setProperty(
         "--anchor-offset",
         `${Math.ceil(header.offsetHeight)}px`
       );
-
     }
 
     updateAnchorOffset();
+    updateHeaderScrollState();
 
-    window.addEventListener(
-      "load",
-      updateAnchorOffset
-    );
+    window.addEventListener("load", function () {
+      updateAnchorOffset();
+      updateHeaderScrollState();
+    });
 
-    window.addEventListener(
-      "resize",
-      updateAnchorOffset
-    );
+    /* Use a debounced resize listener — only fires on actual
+       window resize, NOT during iOS rubber-band overscroll. */
+    let resizeTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateAnchorOffset, 150);
+    });
+
+    /* Throttled scroll listener for header state */
+    let scrollTicking = false;
+    window.addEventListener("scroll", function () {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(function () {
+          updateHeaderScrollState();
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    });
+
+    /* ---- Year ---- */
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    /* ---- Hamburger toggle ---- */
+
+    function toggleMenu(forceState) {
+      const isOpen = forceState !== undefined
+        ? forceState
+        : navToggle.getAttribute("aria-expanded") === "false";
+
+      navToggle.setAttribute("aria-expanded", isOpen);
+      mobilePanel.setAttribute("aria-hidden", !isOpen);
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+
+    if (navToggle) {
+      navToggle.addEventListener("click", () => toggleMenu());
+    }
+
+    /* Close on link click */
+    mobileLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        toggleMenu(false);
+      });
+    });
+
+    /* Close on Escape key */
+    document.addEventListener("keydown", function (e) {
+      if (
+        e.key === "Escape" &&
+        mobilePanel.getAttribute("aria-hidden") === "false"
+      ) {
+        toggleMenu(false);
+        navToggle.focus();
+      }
+    });
+
+    /* Close on click outside the panel */
+    document.addEventListener("click", function (e) {
+      if (
+        mobilePanel.getAttribute("aria-hidden") === "false" &&
+        !mobilePanel.contains(e.target) &&
+        !navToggle.contains(e.target)
+      ) {
+        toggleMenu(false);
+      }
+    });
+
+    /* Re-lock body scroll on resize if menu is open */
+    window.addEventListener("resize", function () {
+      if (mobilePanel.getAttribute("aria-hidden") === "false") {
+        document.body.style.overflow = "hidden";
+      }
+    });
 
   </script>
 
