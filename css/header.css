@@ -6,6 +6,15 @@
 
   position: relative;
 
+  /* The header is `position: fixed` (out of document flow), so reserve
+     its vertical space here. Use --anchor-offset (the measured header
+     height, kept in sync on load/resize) rather than the fixed
+     --header-height, because the brand logo scales with viewport width
+     and the header grows with it. .hero-bg (absolute, inset:0) still
+     fills the space behind the translucent glass header. */
+  padding-top:
+    var(--anchor-offset);
+
   /* No min-height — wraps content naturally.
      The hero section inside handles its own height. */
 }

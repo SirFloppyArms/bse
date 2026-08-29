@@ -395,8 +395,12 @@
 
   display: grid;
 
+  /* Predictable 4-up grid on desktop (4 cards → clean 1×4).
+     Overridden to 2-up / 1-up in responsive.css. */
   grid-template-columns:
-    repeat(auto-fit, minmax(260px, 1fr));
+    repeat(4, minmax(0, 1fr));
+
+  align-items: stretch;
 
   gap: 1.75rem;
 }
@@ -408,6 +412,10 @@
   flex-direction: column;
 
   align-items: center;
+
+  justify-content: flex-start;
+
+  height: 100%;
 
   text-align: center;
 
