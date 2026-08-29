@@ -17,6 +17,22 @@ function updateHeaderScrollState() {
   );
 }
 
+/* ---- Back-to-top button: reveal after the user scrolls past
+      the services section ---- */
+const backToTop = document.querySelector(".back-to-top");
+const servicesSection = document.getElementById("services");
+
+function updateBackToTopState() {
+  if (!backToTop || !servicesSection) return;
+  const servicesBottom =
+    servicesSection.offsetTop + servicesSection.offsetHeight;
+  const show = window.scrollY > servicesBottom;
+
+  backToTop.classList.toggle("is-visible", show);
+  backToTop.setAttribute("aria-hidden", String(!show));
+  backToTop.tabIndex = show ? 0 : -1;
+}
+
 /* ---- Anchor offset (measured once + on window resize only) ---- */
 /* NOTE: --header-height is a FIXED constant in CSS (64px).
    We do NOT dynamically update it, because doing so creates a
@@ -33,10 +49,12 @@ function updateAnchorOffset() {
 
 updateAnchorOffset();
 updateHeaderScrollState();
+updateBackToTopState();
 
 window.addEventListener("load", function () {
   updateAnchorOffset();
   updateHeaderScrollState();
+  updateBackToTopState();
 });
 
 /* Use a debounced resize listener - only fires on actual
@@ -44,20 +62,38 @@ window.addEventListener("load", function () {
 let resizeTimer;
 window.addEventListener("resize", function () {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(updateAnchorOffset, 150);
+  resizeTimer = setTimeout(function () {
+    updateAnchorOffset();
+    updateBackToTopState();
+  }, 150);
 });
 
-/* Throttled scroll listener for header state */
+/* Throttled scroll listener for header + back-to-top state */
 let scrollTicking = false;
 window.addEventListener("scroll", function () {
   if (!scrollTicking) {
     window.requestAnimationFrame(function () {
       updateHeaderScrollState();
+      updateBackToTopState();
       scrollTicking = false;
     });
     scrollTicking = true;
   }
 });
+
+/* --- Back-to-top click: smooth scroll to top --- */
+if (backToTop) {
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  backToTop.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: reduceMotion.matches ? "auto" : "smooth"
+    });
+  });
+}
 
 /* ---- Year ---- */
 const yearElement = document.getElementById("year");

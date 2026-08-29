@@ -311,35 +311,6 @@
             <span class="nav-toggle-bar"></span>
           </button>
 
-          <!-- MOBILE NAV PANEL -->
-
-          <div
-            class="mobile-nav-panel"
-            id="mobile-nav-panel"
-            aria-hidden="true"
-          >
-
-            <nav
-              class="mobile-nav"
-              aria-label="Mobile Navigation"
-            >
-
-              <a href="#services">Services</a>
-
-              <a href="#standards">Standards</a>
-
-              <a href="#industries">Industries</a>
-
-              <a href="#team">Team</a>
-
-              <a href="#community">Community</a>
-
-              <a href="#contact">Contact</a>
-
-            </nav>
-
-          </div>
-
         </div>
 
       </header>
@@ -446,22 +417,6 @@
 
           <div class="hero-logos-grid">
 
-            <!-- Engineers Geoscientists Manitoba -->
-
-            <a
-              href="https://www.enggeomb.ca/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Engineers Geoscientists Manitoba"
-            >
-              <img
-                src="./assets/logos/egm-logo.png"
-                alt="Engineers Geoscientists Manitoba"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-
             <!-- CWB Group -->
 
             <a
@@ -494,6 +449,37 @@
               />
             </a>
 
+            <!-- American Welding Society -->
+
+            <a
+              href="https://www.aws.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="American Welding Society"
+            >
+              <img
+                src="./assets/logos/aws-logo.png"
+                alt="American Welding Society"
+                loading="lazy"
+              />
+            </a>
+
+            <!-- Engineers Geoscientists Manitoba -->
+
+            <a
+              href="https://www.enggeomb.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Engineers Geoscientists Manitoba"
+            >
+              <img
+                src="./assets/logos/egm-logo.png"
+                alt="Engineers Geoscientists Manitoba"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+
             <!-- Professional Engineers Ontario -->
 
             <a
@@ -510,21 +496,6 @@
               />
             </a>
 
-            <!-- American Welding Society -->
-
-            <a
-              href="https://www.aws.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="American Welding Society"
-            >
-              <img
-                src="./assets/logos/aws-logo.png"
-                alt="American Welding Society"
-                loading="lazy"
-              />
-            </a>
-
           </div>
 
         </div>
@@ -532,6 +503,36 @@
       </section>
 
     </div><!-- /.hero-wrapper -->
+
+    <!-- MOBILE NAV PANEL (direct child of body so `position: fixed`
+         is viewport-relative – not trapped by the header's backdrop-filter) -->
+
+    <div
+      class="mobile-nav-panel"
+      id="mobile-nav-panel"
+      aria-hidden="true"
+    >
+
+      <nav
+        class="mobile-nav"
+        aria-label="Mobile Navigation"
+      >
+
+        <a href="#services">Services</a>
+
+        <a href="#standards">Standards</a>
+
+        <a href="#industries">Industries</a>
+
+        <a href="#team">Team</a>
+
+        <a href="#community">Community</a>
+
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+    </div>
 
     <!-- ==================================================
          MAIN CONTENT
@@ -921,18 +922,6 @@
           =================================================== -->
 
           <article class="team-card">
-
-            <div class="team-image-wrapper">
-
-              <img
-                src="./assets/team/brian.jpg"
-                alt="Brian Miller"
-                class="team-image"
-                loading="lazy"
-                decoding="async"
-              />
-
-            </div>
 
             <div class="team-content">
 
@@ -1327,6 +1316,30 @@
     </div>
 
   </footer>
+
+  <!-- ==================================================
+       BACK TO TOP BUTTON
+  =================================================== -->
+
+  <button
+    class="back-to-top"
+    id="back-to-top"
+    type="button"
+    aria-label="Back to top"
+    aria-hidden="true"
+    tabindex="-1"
+  >
+    <svg
+      class="back-to-top-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M12 19V5M5 12l7-7 7 7"
+      />
+    </svg>
+  </button>
 
   <!-- ==================================================
        JAVASCRIPT
